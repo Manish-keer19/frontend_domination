@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swap images</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        button{
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <img id="img1" src="https://images.unsplash.com/photo-1719336234156-320dafbac51a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img1">
+    <img id="img2" src="https://images.unsplash.com/photo-1696469014188-e6d7ea983c56?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="img2">
+    <br>
+    <button>swap the image</button>
+
+    <script>
+        let img1 = document.querySelector("#img1")
+        let img2 = document.querySelector("#img2")
+
+        document.querySelector("button")
+        .addEventListener("click",(e)=>{
+             let temp = img1.src;
+             img1.src = img2.src;
+             img2.src = temp;
+             console.log("images have been swaped")
+        })
+    </script>
+</body>
+</html>

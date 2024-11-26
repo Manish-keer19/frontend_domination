@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #212121;
+    color: white;
+  }
+
+  #box1 {
+    background-color: blue;
+    width: 250px;
+    height: 250px;
+  }
+
+  #box2 {
+    background-color: rgb(197, 197, 0);
+    width: 250px;
+    height: 250px;
+  }
+
+  .cont{
+    margin: 100px;
+    /* background-color: red; */
+    position: relative;
+  }
+
+  #elem1{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+  }
+  #elem2{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(139, 114, 69);
+  }
+  #elem3{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(138, 8, 8);
+  }

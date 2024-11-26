@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>locomotive and scrolltrigger don ka ek sath use</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <style>
+        *{
+           margin: 0;
+           padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .circle{
+            width: 400px;
+            height: 400px;
+            border-radius:10px ;
+            background-color: gold;
+
+        }
+
+        #page1{
+            width: 100%;
+            height: 100vh;
+            background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #page2{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(34, 34, 45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #page3{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(136, 167, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="page1"><div class="circle"></div></div>
+      <div id="page2">
+        <div class="circle"></div>
+      </div>
+      <div id="page3">
+        <div class="circle"></div>
+      </div>
+    </div>
+
+    <!-- 1. sabse pahle locomotive js cdn 
+        2.  gsap cdn 
+        3.  scrolltrigger cdn 
+        4. script.js 
+        -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!-- creat a page which user can add and remove the list items -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dynamicaly ul</title>
+  </head>
+  <body style="background-color: #212121; color: white">
+    <input id="inp" type="text" />
+    <br />
+    <button id="add">add</button>
+    <br />
+    <button id="remove">remove</button>
+
+    <script>
+      let add = document.querySelector("#add");
+      let remove = document.querySelector("#remove");
+      let input = document.querySelector("#inp");
+
+      var ul = document.createElement("ul");
+      console.log(ul);
+      document.body.appendChild(ul);
+
+      add.addEventListener("click", () => {
+        //   console.log(input.value)
+        let li = document.createElement("li");
+        // console.log(li)
+        li.textContent = input.value;
+        ul.appendChild(li);
+        input.value = "";
+      });
+
+      remove.addEventListener("click", () => {
+        let li = ul.getElementsByTagName("li");
+
+        if (!li.length) {
+          console.log("you li is empty");
+        } else {
+          for (let i = 0; i < li.length; i++) {
+            if (i === li.length - 1) {
+              console.log(li[i]);
+              ul.removeChild(li[i]);
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let h1 = document.createElement("h1");
+    let button1 = document.createElement("button");
+    button1.textContent = "start";
+    button1.id = "btn1";
+    let button2 = document.createElement("button");
+    button2.textContent = "stop";
+    button2.id = "btn2";
+    document.body.appendChild(h1);
+    document.body.appendChild(button1);
+    document.body.appendChild(button2);
+
+    let intervalId;
+
+    button1.addEventListener("click", () => {
+      let count = 0;
+      intervalId = setInterval(() => {
+        h1.textContent = count;
+        count++;
+      }, 200);
+      console.log("btn 1 clicked");
+    });
+
+    button2.addEventListener("click", () => {
+      clearInterval(intervalId);
+    });
+  </script>
+</body>
+
+</html>

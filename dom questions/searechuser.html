@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>search use in image</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      #main {
+        width: 100%;
+        height: 100vh;
+        background-color: #212121;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        width: 90%;
+        height: 90%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      input {
+        width: 50%;
+        padding: 5px;
+        margin: 10px;
+        border-radius: 10px;
+        outline-color: blue;
+        font-size: 15px;
+        font-weight: 800;
+        margin-bottom: 20px;
+      }
+
+      .img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        overflow: hidden;
+        object-fit: cover;
+        background-color: blue;
+      }
+
+      .img img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      #people {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 60px;
+        margin: 80px;
+      }
+
+      .person {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      h4 {
+        margin: 0;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <div class="container">
+        <input type="text" placeholder="search.." />
+        <div id="people"></div>
+      </div>
+    </div>
+
+    <script>
+      let people = document.querySelector("#people");
+
+      let input = document.querySelector("input");
+      let data = [
+        {
+          name: "manish",
+          src: "https://plus.unsplash.com/premium_photo-1664533227571-cb18551cac82?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWFufGVufDB8fDB8fHww",
+        },
+
+        {
+          name: "manisha",
+          src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
+
+        {
+          name: "sital",
+          src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
+
+        {
+          name: "simaram",
+          src: "https://plus.unsplash.com/premium_photo-1661341006680-5ef1216f2754?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
+      ];
+
+      let totaldata = "";
+      data.forEach((data) => {
+        totaldata += `   <div class="person">
+                    <div class="img">
+                      <img src="${data.src}" alt="">
+                    </div>
+                    <h4>${data.name}</h4>
+                    </div>
+                    `;
+      });
+
+      people.innerHTML = totaldata;
+
+      input.addEventListener("input", () => {
+        let newData = data.filter((data) => {
+          return data.name.startsWith(input.value);
+        });
+
+        let searchingdata = "";
+
+        newData.forEach((data) => {
+          searchingdata += `<div class="person">
+                    <div class="img">
+                      <img src="${data.src}" alt="">
+                    </div>
+                    <h4>${data.name}</h4>
+                    </div>`;
+        });
+
+        people.innerHTML = searchingdata;
+      });
+    </script>
+  </body>
+</html>

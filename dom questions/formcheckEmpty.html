@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+</head>
+<body>
+    <form >
+        <input id="inp1" type="text" >
+        <input id="inp2" type="text" >
+         <button type="submit"> submit</button>
+    </form>
+
+    <script>
+
+        let subtn = document.querySelector("button");
+        let inp1 = document.querySelector("#inp1")
+        let inp2 = document.querySelector("#inp2")
+
+        subtn.addEventListener("click",(e)=>{
+            console.log(e);
+          e.preventDefault();
+          console.log(inp1.value , inp2.value)
+        if(inp1.value ==='' || inp2.value===''){
+            console.error("please enter any data")
+            alert("kuch data dal bhai")
+        }
+        else{
+
+        }
+        })
+    </script>
+</body>
+</html>
